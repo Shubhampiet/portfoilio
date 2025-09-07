@@ -91,7 +91,7 @@ window.addEventListener('scroll', () => {
     let currentSection = '';
     
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
+        const sectionTop = section.offsetTop - 120;
         const sectionHeight = section.offsetHeight;
         
         if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
@@ -99,13 +99,15 @@ window.addEventListener('scroll', () => {
         }
     });
     
-    // Update active nav links
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${currentSection}`) {
-            link.classList.add('active');
-        }
-    });
+    // Update active nav links only if we have a current section
+    if (currentSection) {
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentSection}`) {
+                link.classList.add('active');
+            }
+        });
+    }
 });
 
 // Counter Animation
@@ -688,12 +690,181 @@ function initAccessibility() {
     document.body.insertBefore(skipLink, document.body.firstChild);
 }
 
+// Gallery Filter Functionality
+function initGalleryFilters() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            btn.classList.add('active');
+            
+            const filterValue = btn.getAttribute('data-filter');
+            
+            galleryItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                
+                if (filterValue === 'all' || category === filterValue) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, 100);
+                } else {
+                    item.classList.remove('visible');
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+}
+
+// Gallery Image Lightbox
+function initGalleryLightbox() {
+    const galleryImages = document.querySelectorAll('.gallery-image img');
+    
+    galleryImages.forEach(img => {
+        img.addEventListener('click', () => {
+            createLightbox(img);
+        });
+    });
+}
+
+function createLightbox(img) {
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `
+        <div class="lightbox-content">
+            <img src="${img.src}" alt="${img.alt}">
+            <button class="lightbox-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    `;
+    
+    document.body.appendChild(lightbox);
+    
+    // Add lightbox styles
+    const lightboxStyles = `
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lightbox.active {
+            opacity: 1;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .lightbox-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+    `;
+    
+    if (!document.getElementById('lightbox-styles')) {
+        const styleSheet = document.createElement('style');
+        styleSheet.id = 'lightbox-styles';
+        styleSheet.textContent = lightboxStyles;
+        document.head.appendChild(styleSheet);
+    }
+    
+    // Show lightbox
+    setTimeout(() => {
+        lightbox.classList.add('active');
+    }, 10);
+    
+    // Close lightbox functionality
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+    const closeLightbox = () => {
+        lightbox.classList.remove('active');
+        setTimeout(() => {
+            lightbox.remove();
+        }, 300);
+    };
+    
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+    
+    // Close with Escape key
+    document.addEventListener('keydown', function escapeHandler(e) {
+        if (e.key === 'Escape') {
+            closeLightbox();
+            document.removeEventListener('keydown', escapeHandler);
+        }
+    });
+}
+
+// Gallery Animation on Scroll
+function initGalleryAnimations() {
+    const galleryObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        galleryObserver.observe(item);
+    });
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     init();
     initEmailHandling();
     initPerformanceOptimizations();
     initAccessibility();
+    initGalleryAnimations();
 });
 
 // Add some Easter eggs
