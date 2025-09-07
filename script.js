@@ -166,8 +166,8 @@ document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
 
-// Observe stats and skills sections
-document.querySelectorAll('.stats-section, .skills-section').forEach(el => {
+// Observe skills sections only
+document.querySelectorAll('.skills-section').forEach(el => {
     observer.observe(el);
 });
 
