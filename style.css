@@ -253,11 +253,21 @@ body {
     animation: slideInLeft 1s ease 0.5s both;
 }
 
+.typing-container {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
 .typing-text {
     border-right: 3px solid #60a5fa;
     white-space: nowrap;
     overflow: hidden;
     animation: typing 4s steps(20) infinite, blink 1s infinite;
+    margin: 0;
 }
 
 .hero p {
@@ -339,7 +349,8 @@ body {
     cursor: pointer;
     font-size: 2.5rem;
     color: #60a5fa;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, opacity 0.5s ease;
+    margin-top: -3rem;
 }
 
 .scroll-indicator:hover {
@@ -349,7 +360,7 @@ body {
 
 /* Section Styling */
 .section {
-    padding: 6rem 1rem;
+    padding: 1rem 1rem;
     position: relative;
     width: 100%;
     display: flex;
@@ -477,6 +488,15 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+}
+
+.card .fas {
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+}
+
+.social-links .icon {
+    margin: 0;
 }
 
 .contact-info {
@@ -607,7 +627,7 @@ body {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
 }
 
@@ -954,7 +974,6 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
     color: #9ca3af;
-    background: rgba(0, 0, 0, 0.5);
 }
 
 /* Fade In Animation */
@@ -1020,6 +1039,11 @@ body {
         font-size: 1rem;
     }
 
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
@@ -1035,6 +1059,11 @@ body {
     .contact-buttons a {
         width: 100%;
         justify-content: center;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .progress-container {

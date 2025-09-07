@@ -61,12 +61,23 @@ function smoothScroll(target) {
 
 // Scroll indicator click
 scrollIndicator.addEventListener('click', () => {
+    scrollIndicator.style.opacity = '0';
+    scrollIndicator.style.pointerEvents = 'none';
     smoothScroll('#about');
 });
 
 // Navbar scroll effect and active link highlighting
 window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
+    
+    // Show/hide scroll indicator based on scroll position
+    if (scrollY > 100) {
+        scrollIndicator.style.opacity = '0';
+        scrollIndicator.style.pointerEvents = 'none';
+    } else {
+        scrollIndicator.style.opacity = '1';
+        scrollIndicator.style.pointerEvents = 'auto';
+    }
     
     // Navbar background change on scroll
     if (scrollY > 50) {
