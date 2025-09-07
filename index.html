@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubham Singh - Frontend Engineer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Shapes -->
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">Shubham Singh</div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#home" class="mobile-link">Home</a>
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#skills" class="mobile-link">Skills</a>
+            <a href="#experience" class="mobile-link">Experience</a>
+            <a href="#projects" class="mobile-link">Projects</a>
+            <a href="#education" class="mobile-link">Education</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="avatar">SS</div>
+            <h1>Shubham Singh</h1>
+            <h2 class="typing-text">Frontend Engineer</h2>
+            <p>3 years of experience building scalable and user-friendly web applications. Passionate about creating exceptional digital experiences with React and modern technologies.</p>
+            <div class="hero-buttons">
+                <a href="mailto:shubham.itpiet@gmail.com" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    Get in Touch
+                </a>
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-folder-open"></i>
+                    View Projects
+                </a>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="counter" data-target="3">0</span>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <span class="counter" data-target="15">0</span>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card">
+                    <span class="counter" data-target="90">0</span>
+                    <div class="stat-label">% Performance Boost</div>
+                </div>
+                <div class="stat-card">
+                    <span class="counter" data-target="100">0</span>
+                    <div class="stat-label">% Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="card fade-in">
+                    <i class="fas fa-user"></i>
+                    <h3>Professional Summary</h3>
+                    <p>Frontend Engineer with proven ability to deliver clean, reusable, and optimized code. Experienced in creating responsive UI, integrating APIs, authentication systems, and payment gateways. Strong collaborator with exposure to MERN stack, Python, and AI-based solutions, mentoring, and client communication.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Delhi, India</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <span>+91-7982164735</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <span>shubham.itpiet@gmail.com</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/shubham07481/" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Shubhampiet" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <!-- Circular Progress Bars -->
+            <div class="progress-container">
+                <div class="progress-item">
+                    <div class="progress-circle" data-percent="60">
+                        <div class="progress-text">
+                            <span class="progress-number">60%</span>
+                            <span class="progress-label">Frontend</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-circle" data-percent="30">
+                        <div class="progress-text">
+                            <span class="progress-number">30%</span>
+                            <span class="progress-label">Backend</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-circle" data-percent="10">
+                        <div class="progress-text">
+                            <span class="progress-number">10%</span>
+                            <span class="progress-label">AI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card frontend fade-in">
+                    <i class="fas fa-code"></i>
+                    <h3>Frontend</h3>
+                    <ul class="skill-list">
+                        <li>React.js</li>
+                        <li>Redux Toolkit</li>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>Material UI</li>
+                        <li>Tailwind CSS</li>
+                    </ul>
+                </div>
+                <div class="skill-card backend fade-in">
+                    <i class="fas fa-database"></i>
+                    <h3>Backend & Database</h3>
+                    <ul class="skill-list">
+                        <li>Node.js</li>
+                        <li>Express.js</li>
+                        <li>MongoDB</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+                <div class="skill-card tools fade-in">
+                    <i class="fas fa-tools"></i>
+                    <h3>Tools & Others</h3>
+                    <ul class="skill-list">
+                        <li>AI</li>
+                        <li>Agentic AI</li>
+                        <li>Claude-code</li>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>Docker</li>
+                        <li>JWT/Auth</li>
+                        <li>REST APIs</li>
+                        <li>React DevTools</li>
+                    </ul>
+                </div>
+                <div class="skill-card soft fade-in">
+                    <i class="fas fa-users"></i>
+                    <h3>Soft Skills</h3>
+                    <ul class="skill-list">
+                        <li>Debugging</li>
+                        <li>Code Reviews</li>
+                        <li>Sprint Planning</li>
+                        <li>Mentoring</li>
+                        <li>Cross-team Collaboration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="experience-item fade-in">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Software Engineer (Frontend)</div>
+                        <div class="company-name">Symplique Solutions</div>
+                    </div>
+                    <div class="period">Oct 2023 - Present</div>
+                </div>
+                <div class="achievements">
+                    <div class="achievement">
+                        <span>Develop and maintain scalable React-based applications with a focus on performance and responsiveness.</span>
+                    </div>
+                    <div class="achievement">
+                        <span>Implemented Razorpay payment gateway, authentication with Supabase, and Role-Based Access Control (RBAC).</span>
+                    </div>
+                    <div class="achievement">
+                        <span>Collaborate with backend engineers and UI/UX designers to ensure seamless feature delivery.</span>
+                    </div>
+                    <div class="achievement">
+                        <span>Write clean, reusable code and conduct peer reviews to improve team productivity.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-item fade-in">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Web Developer</div>
+                        <div class="company-name">WebZenda Pvt Ltd</div>
+                    </div>
+                    <div class="period">Sep 2022 - Oct 2023</div>
+                </div>
+                <div class="achievements">
+                    <div class="achievement">
+                        <span>Built and optimised UI components using React.js, Material-UI, HTML, and CSS.</span>
+                    </div>
+                    <div class="achievement">
+                        <span>Integrated APIs and managed state with React hooks.</span>
+                    </div>
+                    <div class="achievement">
+                        <span>Designed and developed reusable components, reducing development time and improving maintainability.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-title">Exam Portal</div>
+                    <div class="project-tech">React, Context API, Material UI, Razorpay, React Hooks, Supabase</div>
+                    <div class="project-description">Developed a comprehensive exam portal featuring secure authentication, robust role-based access, and integrated Razorpay payments, reducing app loading time by 50% and improving overall performance by 30%.</div>
+                    <ul class="project-highlights">
+                        <li>50% faster loading time</li>
+                        <li>30% performance improvement</li>
+                        <li>Secure authentication</li>
+                        <li>Role-based access control</li>
+                        <li>Integrated payments</li>
+                    </ul>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-title">AI-Based Test Generation</div>
+                    <div class="project-tech">Python, GenAI, Claude code</div>
+                    <div class="project-description">Engineered an AI-based test generation tool to create Django-compatible fixtures, leveraging Python and GenAI to reduce manual workload by 90%.</div>
+                    <ul class="project-highlights">
+                        <li>90% workload reduction</li>
+                        <li>Django compatibility</li>
+                        <li>AI-powered automation</li>
+                        <li>Python & GenAI integration</li>
+                    </ul>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-title">Coding Platform</div>
+                    <div class="project-tech">React.js, Redux, Node, Express, MongoDB</div>
+                    <div class="project-description">Developed a full-stack coding platform that enables students to practice coding online with real-time execution, problem tracking, and progress monitoring. Implemented efficient state management with Redux and built secure, scalable APIs using Node.js and Express for seamless frontend-backend interaction.</div>
+                    <ul class="project-highlights">
+                        <li>Real-time code execution</li>
+                        <li>Progress monitoring</li>
+                        <li>Redux state management</li>
+                        <li>Scalable API architecture</li>
+                        <li>Problem tracking system</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-timeline">
+                <div class="education-item fade-in">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Bachelor of Technology (B.Tech)</h3>
+                        <h4>Kurukshetra University</h4>
+                        <p class="education-period">2016 - 2020</p>
+                        <p class="education-description">Completed Bachelor's degree in Technology, building strong foundation in computer science and software development principles.</p>
+                    </div>
+                </div>
+                
+                <div class="education-item fade-in">
+                    <div class="education-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>12th Grade</h3>
+                        <h4>Government Sarvodya Bal Vidyalaya Delhi</h4>
+                        <p class="education-period">2014 - 2016</p>
+                        <p class="education-description">Completed higher secondary education with focus on science and mathematics.</p>
+                    </div>
+                </div>
+                
+                <div class="education-item fade-in">
+                    <div class="education-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>10th Grade</h3>
+                        <h4>Government Sarvodya Bal Vidyalaya Delhi</h4>
+                        <p class="education-period">2012 - 2014</p>
+                        <p class="education-description">Completed secondary education building fundamental academic skills.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">Let's Work Together</h2>
+            <p class="contact-subtitle">Ready to bring your ideas to life? Let's discuss your next project.</p>
+            <div class="contact-buttons">
+                <a href="mailto:shubham.itpiet@gmail.com" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i>
+                    Send Email
+                </a>
+                <a href="https://www.linkedin.com/in/shubham07481/" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-linkedin-in"></i>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/Shubhampiet" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Shubham Singh. Built with HTML, CSS, JavaScript and passion.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
